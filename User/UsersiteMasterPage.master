@@ -1,0 +1,218 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UsersiteMasterPage.master.cs" Inherits="User_UsersiteMasterPage" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <link href="../css/User/Custome.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  
+    <script>
+
+        $(document).ready(function myfunction() {
+            $("#btnCart").click(function myfunction() {
+                window.location.href = "AddtoCart.aspx";
+            });
+        });
+
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="fm">
+            <!---Navbar start--->
+            <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+                <div class="container ">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="UserMainPage.aspx"><span>
+                            <img src="../css/User/Icon/icons8-mirror-50.png" alt="ShopCart" height="30" /></span>Shoppy</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="UserMainPage.aspx">Home</a> </li>
+                            <li><a href="UserOrder.aspx">Your Order</a> </li>
+                            <li><a href="AddtoCart.aspx">Cart&nbsp;<span id="CartBadge" runat="server" class="badge">0</span></a></li>
+                            <li><a href="UserLogin.aspx">Login</a> </li>
+                            <%--<li ><a href ="#">Blog-</a> </li>--%>
+                            <%--  <li class="drodown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                                <ul class="dropdown-menu ">
+                                    <li><a href="Products.aspx">All Products</a></li>
+                                    <li role="separator" class="divider "></li>
+                                    <li class="dropdown-header ">Men</li>
+                                    <li role="separator" class="divider "></li>
+                                    <li><a href="ManShirt.aspx">Shirts</a></li>
+                                    <li><a href="ManPants.aspx">Pants</a></li>
+                                    <li><a href="ManDenims.aspx">Denims</a></li>
+                                    <li role="separator" class="divider "></li>
+                                    <li class="dropdown-header ">Women</li>
+                                    <li role="separator" class="divider "></li>
+                                    <li><a href="WomanTop.aspx">Top</a></li>
+                                    <li><a href="womanLegging.aspx">Leggings</a></li>
+                                    <li><a href="WomanSarees.aspx">Sarees</a></li>
+                                </ul>
+                            </li>--%>
+                            <%--   <li>
+                                <button id="btnCart" class="navbar-btn" type="button">
+                                    Cart<span class="badge" id="pCount" runat="server"></span>
+
+                                </button>
+                            </li>
+                            <li>
+                                <asp:Button ID="Login" CssClass="navbar-btn" runat="server" Text="Login" OnClick="Login_Click" />
+                            </li>--%>
+                            <li><a href="#">
+                                <asp:Label ID="lbluser" runat="server"></asp:Label></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!---navbar end--->
+            <!-- Sidebar -->
+            <%-- <div class="w3-sidebar w3-light-grey w3-bar-block" style="width: 15%">
+                <h3 class="w3-bar-item">Menu</h3>
+                <a href="#" class="w3-bar-item w3-button">Link 1</a>
+                <a href="#" class="w3-bar-item w3-button">Link 2</a>
+                <a href="#" class="w3-bar-item w3-button">Link 3</a>
+            </div>--%>
+
+            <!-- Page Content -->
+
+
+            <div class="container-fluid">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+    <!---Footer COntents Start here---->
+    <hr />
+    <div style="margin-left: 10%" class="footer">
+
+        <div class="w3-container">
+            <footer class="text-center text-lg-start bg-light text-muted">
+                <!-- Section: Social media -->
+                <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                    <!-- Left -->
+                    <div class="me-5 d-none d-lg-block">
+                        <span>Get connected with us on social networks:</span>
+                    </div>
+                    <!-- Left -->
+
+                </section>
+                <!-- Section: Social media -->
+
+                <!-- Section: Links  -->
+                <section class="">
+                    <div class="container text-center text-md-start mt-5">
+                        <!-- Grid row -->
+                        <div class="row mt-3">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                <!-- Content -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    <i class="fas fa-gem me-3"></i>ShopCart
+                                </h6>
+                                <p>
+                                    allows people to buy and sell physical goods, services, and digital products over the internet rather than at a brick-and-mortar location.
+                               
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">Products
+                                </h6>
+                                <p>
+                                    <a href="#!" class="text-reset">Mens</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Womens</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Electronics</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Gadgets</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">Useful links
+                                </h6>
+                                <p>
+                                    <a href="UserMainPage.aspx" class="text-reset">Home</a>
+                                </p>
+                                <p>
+                                    <a href="About.aspx" class="text-reset">About</a>
+                                </p>
+                                <p>
+                                    <a href="Contact.aspx" class="text-reset">Contact</a>
+                                </p>
+                                <p>
+                                    <a href="../Admin/AdminLogin.aspx" class="text-reset">Admin Signin</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                                <p><i class="fas fa-home me-3"></i>Surat, Gujarat , India</p>
+                                <p>
+                                    <i class="fas fa-envelope me-3"></i>
+                                    ShopCart@example.com
+                               
+                                </p>
+                                <p><i class="fas fa-phone me-3"></i>+91 63597 84404</p>
+                                <p><i class="fas fa-print me-3"></i>+91 72858 62716</p>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+                    </div>
+                </section>
+                <!-- Section: Links  -->
+
+                <!-- Copyright -->
+                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                    © 2022 Copyright:
+   
+                    <a class="text-reset fw-bold" href="http://localhost:54749/User/UserMainPage.aspx">ShopCart.com</a>
+                </div>
+                <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+        </div>
+    </div>
+</body>
+</html>

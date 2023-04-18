@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminSiteMasterPage.master.cs" Inherits="Admin_AdminSiteMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="../Min/Values/Bootstrap/bootstrap.min.css" />
+    <script src="../Min/Values/Bootstrap/bootstrap.min.js"></script>
+    <script src="../Min/Values/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/Admin/Dashboard/NavBar.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        tr,td{
+            padding:5px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="viewport">
+            <!-- Sidebar -->
+            <div id="sidebar">
+                <header>
+                    <a href="#">ShopCart</a>
+                </header>
+                <ul class="nav">
+                    <li>
+                        <a href="AdminDashboard.aspx">
+                            <i class="zmdi zmdi-view-dashboard"></i>Dashboard
+                        </a>
+                    </li>
+                     <li>
+                        <a href="ManageOrder.aspx">
+                            <i class="zmdi zmdi-comment-more"></i>Manage Order
+                        </a>
+                    </li>
+                      <li>
+                        <a href="AddNewItem.aspx">
+                            <i class="zmdi zmdi-link"></i>Add Product
+                        </a>
+                    </li>
+                    <li>
+                        <a href="AddCategory.aspx">
+                            <i class="zmdi zmdi-link"></i>Add Category
+                        </a>
+                    </li>
+                    <li>
+                        <a href="AddSubCategory.aspx">
+                            <i class="zmdi zmdi-widgets"></i>Add SubCategory
+                        </a>
+                    </li>
+                    <li>
+                        <a href="AddCountry.aspx">
+                            <i class="zmdi zmdi-calendar"></i>Add Country
+                        </a>
+                    </li>
+                     <li>
+                        <a href="AddState.aspx">
+                            <i class="zmdi zmdi-link"></i>Add State
+                        </a>
+                    </li>
+                     <li>
+                        <a href="AddCity.aspx">
+                            <i class="zmdi zmdi-link"></i>Add City
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="AddNewAdmin.aspx">
+                            <i class="zmdi zmdi-info-outline"></i>New Admin
+                        </a>
+                    </li>
+                    <li>
+                        <a href="AdminForgotPassword.aspx">
+                            <i class="zmdi zmdi-settings"></i>Reset Password
+                        </a>
+                    </li>
+                    <li>
+                        <a href="AdminLogout.aspx">
+                            <i class="zmdi zmdi-settings"></i>Logout
+                        </a>
+                    </li>  
+                </ul>
+            </div>
+            <!-- Content -->
+            <div id="content">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav navbar-right" style="margin-top:-35px;">
+                            <li>
+                                <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
+                                </a>
+                            </li>
+                            <li><a href="#" ><asp:ContentPlaceHolder ID="AdminameDisplay" runat="server"></asp:ContentPlaceHolder></a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                   <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
